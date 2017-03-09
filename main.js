@@ -68,12 +68,11 @@ console.error = (function(old) {
 if (window && window.Worker) {
   document.getElementById('start-worker').addEventListener('click', (e) => {
       var wrkr = new Worker("workers/worker.js");
-      wrkr.postMessage('hey asshole!');
+      wrkr.postMessage('hey dude!');
       console.warn('message posted to worker');
       wrkr.onmessage = (e => console.warn('message from worker received ' + e.data));
       //wrkr.terminate();
   });
-
 
 }
 
